@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: CRM_app_v2_development
+  username: wlapp_db_admin
+  password: wlapp-db-pas
+  host: localhost
+
+test:
+  <<: *default
+  database: CRM_app_v2_test
+  username: wlapp_db_admin
+  password: wlapp-db-pas
+  host: localhost
